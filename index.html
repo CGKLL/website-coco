@@ -5,45 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Constanze Ehrhardt</title>
   <style>
-    :root{
-      --red:#e20d17;
-      --orange:#ff4a00;
-      --cream:#f6f3ea;
-      --ink:#161616;
-      --blue:#1ea4ff;
-    }
+    :root{--red:#e20d17;--orange:#ff4a00;--cream:#f6f3ea;--blue:#1ea4ff}
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--red);color:var(--cream);font-family:Georgia, "Times New Roman", serif;}
+    body{margin:0;background:var(--red);color:var(--cream);font-family:Georgia,"Times New Roman",serif}
     img{max-width:100%;display:block}
 
-    .topnav{
-      position:sticky;top:0;z-index:50;
-      display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;
-      padding:.7rem 1rem;
-      background:rgba(226,13,23,.92);
-      backdrop-filter: blur(6px);
-      border-bottom:1px solid rgba(255,255,255,.18);
-    }
-    .topnav a{
-      color:var(--cream);text-decoration:none;font-size:.8rem;letter-spacing:.08em;
-      text-transform:uppercase;padding:.25rem .4rem;border:1px solid transparent;
-    }
-    .topnav a:hover{border-color:rgba(255,255,255,.45)}
-
-    section{scroll-margin-top:64px}
-    .hero{
-      min-height:88vh;position:relative;
-      background:url('assets/hero.jpg') center/cover no-repeat;
-      padding:2rem 1rem 3rem;
-    }
-
+    .hero{min-height:100vh;position:relative;background:url('assets/hero.jpg') center/cover no-repeat}
     .arrow{font-size:6rem;color:var(--blue);line-height:.6;position:absolute;left:8%;bottom:8%}
 
-    .about{
-      background:var(--orange);display:grid;grid-template-columns:1fr 1fr;align-items:stretch;
-      min-height:85vh;
-    }
+    .about{background:var(--orange);display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
     .about-copy{padding:2.2rem 1rem 2rem 1.2rem;max-width:560px}
     h2{margin:0 0 1rem;font-size:clamp(2.6rem,7vw,5.4rem);line-height:.9;text-transform:uppercase}
     .about p{font-size:clamp(1rem,1.4vw,1.45rem);line-height:1.45;margin:0 0 1.3rem}
@@ -68,10 +39,6 @@
     button{width:max-content;padding:.7rem 1.1rem;background:var(--cream);color:#8b0b12;border:0;font-weight:700;cursor:pointer}
     .contact-data{align-self:flex-end;text-align:right;color:#120e0f;font-size:clamp(1rem,1.3vw,1.28rem);line-height:1.45;margin-top:2rem}
 
-    .reveal{opacity:1;transform:none;transition:all .7s ease}
-    .js .reveal{opacity:0;transform:translateY(22px)}
-    .js .reveal.in{opacity:1;transform:none}
-
     @media (max-width:950px){
       .about,.grid-two{grid-template-columns:1fr}
       .about-media{max-height:620px}
@@ -80,41 +47,33 @@
   </style>
 </head>
 <body>
-  <nav class="topnav">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#experience">Erfahrung</a>
-    <a href="#showreel">Show Reel</a>
-    <a href="#contact">Talk to me</a>
-  </nav>
-
   <section class="hero" id="home">
     <div class="arrow" aria-hidden="true">⌄⌄</div>
   </section>
 
   <section class="about" id="about">
-    <div class="about-copy reveal">
+    <div class="about-copy">
       <h2>About</h2>
       <p>Mit 15 Jahren Erfahrung konzipiere und realisiere ich Kommunikationsformate für Marken, Mittelstand und Konzerne.</p>
       <p>Mein Spektrum reicht von Kreativdirektion, Kampagnenentwicklung und Filmproduktion über Beratung auf Führungsebene bis zum Editorial Management.</p>
       <p>Ich arbeite international, interdisziplinär und branchenübergreifend, kreativ und strukturiert von der ersten Idee bis zum erfolgsdurchschlagenden Ergebnis.</p>
     </div>
-    <div class="about-media reveal">
+    <div class="about-media">
       <img src="assets/about-portrait.jpg" alt="Constanze Ehrhardt" loading="lazy">
       <div class="arrow" style="right:6%;left:auto;bottom:2%;font-size:5.2rem">⌄⌄</div>
     </div>
   </section>
 
   <section class="xp" id="experience">
-    <h2 class="reveal">Erfahrung</h2>
+    <h2>Erfahrung</h2>
     <div class="grid-two">
-      <article class="card reveal">
+      <article class="card">
         <h3>Referenzen</h3>
         <p><span class="k">Karstadt/Karstadt Marketingkampagne:</span> Konzept und Produktionsleitung für Anzeigen-, Employer-Branding- und Image-Kampagnen. Teamlead Video Production, Projektmanagement in den Disziplinen Storytelling, Script, On-Camera Interview, Regie und Schnittregie.</p>
         <p><span class="k">Corporate Communications Consulting:</span> Strategische Beratung und Management. Content- und Kommunikationsplanung, Employer Branding, Strategie, Botschaften, Beratung und Sparring für C‑Suite und Management, Integration in Teams und Agenturen.</p>
         <p><span class="k">Editorial Management:</span> Inhaltliches Management, Corporate Publishing/People‑Magazine für Marken und Unternehmen, Redaktionsstrategie, Programmmanagement, Content-Copy, Qualitätsmanagement, In-House‑Coaching sowie Lektorat.</p>
       </article>
-      <article class="card reveal">
+      <article class="card">
         <h3 style="opacity:0">Referenzen</h3>
         <p><span class="k">Skills:</span> Entwicklung und Produktion integrierter Kommunikations- und Kampagnenstrategien. Ideen, externer Output, Teamwork auf Projektebene, kreative und präzise Verantwortung, Strukturierung komplexer Inhalte, analytisches Denken, Beratung/Sparring auf Führungsebene.</p>
         <p><span class="k">Branchen:</span> Automotive, Aviation & Travel, Tourism, Banking & Consulting, Industrie & Technologie, Publishing & Media, Retail, Consumer & Luxury, Telekommunikation.</p>
@@ -126,8 +85,8 @@
   </section>
 
   <section class="showreel" id="showreel">
-    <h2 class="reveal">Show Reel</h2>
-    <div class="frame reveal">
+    <h2>Show Reel</h2>
+    <div class="frame">
       <video class="showreel-video" id="showreelVideo" preload="metadata" muted playsinline loop>
         <source src="assets/showreel.mp4" type="video/mp4">
       </video>
@@ -136,8 +95,8 @@
 
   <section class="contact" id="contact">
     <div>
-      <h2 class="reveal">Talk to me</h2>
-      <form class="reveal" onsubmit="event.preventDefault(); alert('Danke! Das Formular ist aktuell ohne Versand eingerichtet.');">
+      <h2>Talk to me</h2>
+      <form onsubmit="event.preventDefault(); alert('Danke! Das Formular ist aktuell ohne Versand eingerichtet.');">
         <input type="text" placeholder="Name" required>
         <input type="email" placeholder="E-Mail" required>
         <textarea placeholder="Nachricht"></textarea>
@@ -145,7 +104,7 @@
       </form>
     </div>
 
-    <div class="contact-data reveal">
+    <div class="contact-data">
       home@constanze-ehrhardt.com<br>
       +49 176 23 59 65 61<br>
       LinkedIn: constanze-ehrhardt<br><br>
@@ -155,12 +114,6 @@
   </section>
 
   <script>
-    document.documentElement.classList.add('js');
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-    },{threshold:.14});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-
     const showreelVideo = document.getElementById('showreelVideo');
     if (showreelVideo) {
       const videoObserver = new IntersectionObserver((entries) => {
