@@ -33,13 +33,10 @@
 
     section{scroll-margin-top:64px}
     .hero{
-      min-height:88vh;position:relative;display:grid;align-content:start;
+      min-height:88vh;position:relative;
       background:url('assets/hero.jpg') center/cover no-repeat;
       padding:2rem 1rem 3rem;
     }
-    .title{color:var(--orange);font-size:clamp(2.8rem,10vw,7rem);line-height:.9;margin:0;font-weight:700;text-transform:uppercase}
-    .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:.5rem;max-width:760px}
-    .hero-grid span{font-size:clamp(.8rem,2vw,1.4rem);text-transform:uppercase;color:#61210d;font-weight:700}
 
     .arrow{font-size:6rem;color:var(--blue);line-height:.6;position:absolute;left:8%;bottom:8%}
 
@@ -70,8 +67,9 @@
     button{width:max-content;padding:.7rem 1.1rem;background:var(--cream);color:#8b0b12;border:0;font-weight:700;cursor:pointer}
     .contact-data{align-self:flex-end;text-align:right;color:#120e0f;font-size:clamp(1rem,1.3vw,1.28rem);line-height:1.45;margin-top:2rem}
 
-    .reveal{opacity:0;transform:translateY(22px);transition:all .7s ease}
-    .reveal.in{opacity:1;transform:none}
+    .reveal{opacity:1;transform:none;transition:all .7s ease}
+    .js .reveal{opacity:0;transform:translateY(22px)}
+    .js .reveal.in{opacity:1;transform:none}
 
     @media (max-width:950px){
       .about,.grid-two{grid-template-columns:1fr}
@@ -90,11 +88,6 @@
   </nav>
 
   <section class="hero" id="home">
-    <h1 class="title">Constanze<br>Ehrhardt</h1>
-    <div class="hero-grid">
-      <span>Expertin für</span>
-      <span>Unternehmens<br>kommunikation</span>
-    </div>
     <div class="arrow" aria-hidden="true">⌄⌄</div>
   </section>
 
@@ -159,6 +152,7 @@
   </section>
 
   <script>
+    document.documentElement.classList.add('js');
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
     },{threshold:.14});
