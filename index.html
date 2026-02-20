@@ -12,7 +12,6 @@
     img{max-width:100%;display:block}
 
     .hero{min-height:100vh;position:relative;background:url('assets/hero.jpg') center/cover no-repeat}
-    .arrow{font-size:6rem;color:var(--blue);line-height:.6;position:absolute;left:8%;bottom:8%}
 
     .about{background:var(--orange);display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
     .about-copy{padding:2.2rem 1rem 2rem 1.2rem;max-width:560px}
@@ -42,14 +41,11 @@
     @media (max-width:950px){
       .about,.grid-two{grid-template-columns:1fr}
       .about-media{max-height:620px}
-      .arrow{left:auto;right:8%;bottom:4%}
     }
   </style>
 </head>
 <body>
-  <section class="hero" id="home">
-    <div class="arrow" aria-hidden="true">⌄⌄</div>
-  </section>
+  <section class="hero" id="home"></section>
 
   <section class="about" id="about">
     <div class="about-copy">
@@ -60,7 +56,6 @@
     </div>
     <div class="about-media">
       <img src="assets/about-portrait.jpg" alt="Constanze Ehrhardt" loading="lazy">
-      <div class="arrow" style="right:6%;left:auto;bottom:2%;font-size:5.2rem">⌄⌄</div>
     </div>
   </section>
 
@@ -81,7 +76,7 @@
         <p><span class="k">Sprachen:</span> Englisch (C1), Italienisch (B1).</p>
       </article>
     </div>
-    <div class="arrow" style="position:static;text-align:center;font-size:5rem">⌄⌄</div>
+    <!-- arrow removed -->
   </section>
 
   <section class="showreel" id="showreel">
