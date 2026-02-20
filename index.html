@@ -58,7 +58,8 @@
     .card .k{font-weight:700;color:#1f1516}
 
     .showreel{padding:1.2rem .8rem 1.5rem;background:var(--orange)}
-    .frame{border:.9rem solid #000;display:block;position:relative}
+    .frame{border:.9rem solid #000;display:block;position:relative;background:#000}
+    .showreel-video{width:100%;height:auto;display:block}
 
     .contact{padding:1.2rem 1rem 3.2rem;min-height:58vh;display:flex;flex-direction:column;justify-content:space-between}
     form{max-width:620px;display:grid;gap:.65rem}
@@ -127,7 +128,9 @@
   <section class="showreel" id="showreel">
     <h2 class="reveal">Show Reel</h2>
     <div class="frame reveal">
-      <img src="assets/showreel.jpg" alt="Showreel Preview" loading="lazy">
+      <video class="showreel-video" id="showreelVideo" preload="metadata" muted playsinline loop>
+        <source src="assets/showreel.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
@@ -157,6 +160,20 @@
       entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
     },{threshold:.14});
     document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    const showreelVideo = document.getElementById('showreelVideo');
+    if (showreelVideo) {
+      const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.45) {
+            showreelVideo.play().catch(() => {});
+          } else {
+            showreelVideo.pause();
+          }
+        });
+      }, { threshold: [0, 0.45, 0.8] });
+      videoObserver.observe(showreelVideo);
+    }
   </script>
 </body>
 </html>
