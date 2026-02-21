@@ -11,6 +11,20 @@
     body{margin:0;background:var(--red);color:var(--cream);font-family:Georgia,"Times New Roman",serif}
     img{max-width:100%;display:block}
 
+    .sticky-nav{
+      position:sticky;top:0;z-index:1000;
+      display:flex;gap:1rem;justify-content:center;align-items:center;
+      padding:.65rem .75rem;
+      background:rgba(20,12,13,.78);
+      backdrop-filter:blur(6px);
+      border-bottom:1px solid rgba(246,243,234,.22)
+    }
+    .sticky-nav a{
+      color:var(--cream);text-decoration:none;text-transform:uppercase;
+      letter-spacing:.06em;font-size:clamp(.72rem,1.3vw,.9rem)
+    }
+    .sticky-nav a:hover{opacity:.8}
+
     .hero{min-height:100vh;position:relative;background:url('assets/hero.jpg') center/cover no-repeat}
 
     .about{background:var(--orange);display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
@@ -39,12 +53,21 @@
     .contact-data{align-self:flex-end;text-align:right;color:#120e0f;font-size:clamp(1rem,1.3vw,1.28rem);line-height:1.45;margin-top:2rem}
 
     @media (max-width:950px){
+      .sticky-nav{flex-wrap:wrap;gap:.45rem .8rem;padding:.55rem}
       .about,.grid-two{grid-template-columns:1fr}
       .about-media{max-height:620px}
     }
   </style>
 </head>
 <body>
+  <nav class="sticky-nav" aria-label="Hauptnavigation">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#experience">Erfahrung</a>
+    <a href="#showreel">Show Reel</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+
   <section class="hero" id="home"></section>
 
   <section class="about" id="about">
