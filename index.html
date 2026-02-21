@@ -25,16 +25,16 @@
     }
     .sticky-nav a:hover{opacity:.8}
 
-    .hero{min-height:100vh;position:relative;background:url('assets/hero-clean.jpg') center/cover no-repeat;overflow:hidden}
+    .hero{height:clamp(520px,82vh,760px);position:relative;background:url('assets/hero-clean.jpg') center top/cover no-repeat;overflow:hidden}
 
     .hero-text{
       position:absolute;z-index:2;color:var(--orange);
-      font-family:"ITC Benguiat Condensed","ITC Benguiat","Times New Roman",serif;
+      font-family:"ITC Benguiat Condensed","ITC Benguiat","Benguiat Std","Bookman Old Style","Times New Roman",serif;
       text-transform:uppercase
     }
-    .hero-title{left:17.6%;top:3.8%;font-size:clamp(3.15rem,10.6vw,8.6rem);line-height:.84;letter-spacing:.01em}
-    .hero-left{left:10%;top:36.2%;font-size:clamp(1.05rem,2.2vw,2.2rem);font-weight:700}
-    .hero-right{left:40.1%;top:40.8%;font-size:clamp(1.05rem,2.2vw,2.2rem);font-weight:700;line-height:1.02}
+    .hero-title{left:4.4%;top:5.8%;font-size:clamp(4.15rem,10.4vw,9.1rem);line-height:.84;letter-spacing:-.01em;font-weight:700}
+    .hero-left{left:12.3%;top:38.4%;font-size:clamp(1.25rem,2.45vw,2.5rem);font-weight:700}
+    .hero-right{left:39.7%;top:46.8%;font-size:clamp(1.25rem,2.45vw,2.5rem);font-weight:700;line-height:1.04}
 
     .about{background:var(--orange);display:grid;grid-template-columns:1fr 1fr;min-height:85vh}
     .about-copy{padding:2.2rem 1rem 2rem 1.2rem;max-width:560px}
@@ -63,9 +63,10 @@
 
     @media (max-width:950px){
       .sticky-nav{flex-wrap:wrap;gap:.45rem .8rem;padding:.55rem}
-      .hero-title{left:8%;top:5.2%;font-size:clamp(2.35rem,13vw,4.8rem)}
-      .hero-left{left:9%;top:37.5%;font-size:clamp(.86rem,2.7vw,1.08rem)}
-      .hero-right{left:41%;top:42%;font-size:clamp(.86rem,2.7vw,1.08rem)}
+      .hero{height:clamp(430px,74vh,620px);background-position:center top}
+      .hero-title{left:4.8%;top:6.2%;font-size:clamp(2.85rem,13.5vw,5.3rem)}
+      .hero-left{left:10%;top:39.5%;font-size:clamp(.95rem,3.15vw,1.25rem)}
+      .hero-right{left:39%;top:47.8%;font-size:clamp(.95rem,3.15vw,1.25rem)}
       .about,.grid-two{grid-template-columns:1fr}
       .about-media{max-height:620px}
     }
