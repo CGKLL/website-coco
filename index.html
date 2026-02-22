@@ -264,24 +264,24 @@
         audioBtn.innerHTML = video.muted ? ICON_SOUND_OFF : ICON_SOUND_ON;
       };
 
-      const showreelSection = document.getElementById('showreel');
+      const showreelTarget = document.querySelector('#showreel .showreel-frame');
       const updatePlaybackByViewport = () => {
-        if (!showreelSection) return;
-        const rect = showreelSection.getBoundingClientRect();
+        if (!showreelTarget) return;
+        const rect = showreelTarget.getBoundingClientRect();
         const vh = window.innerHeight || document.documentElement.clientHeight;
         const visiblePx = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
         const visibleRatio = rect.height > 0 ? (visiblePx / rect.height) : 0;
 
-        if (visibleRatio >= 0.15) {
+        if (visibleRatio >= 0.45) {
           tryPlay();
         } else {
           video.pause();
         }
       };
 
-      if ('IntersectionObserver' in window && showreelSection) {
-        const observer = new IntersectionObserver(() => updatePlaybackByViewport(), { threshold: [0, 0.1, 0.15, 0.4, 1] });
-        observer.observe(showreelSection);
+      if ('IntersectionObserver' in window && showreelTarget) {
+        const observer = new IntersectionObserver(() => updatePlaybackByViewport(), { threshold: [0, 0.2, 0.45, 0.7, 1] });
+        observer.observe(showreelTarget);
       }
 
       window.addEventListener('scroll', updatePlaybackByViewport, { passive: true });
