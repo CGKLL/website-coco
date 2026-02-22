@@ -219,7 +219,7 @@
     <section class="zone showreel" id="showreel">
       <h2 class="zone-title">Show Reel</h2>
       <div class="showreel-frame" aria-label="Showreel Video">
-        <video id="showreelVideo" muted playsinline loop preload="metadata">
+        <video id="showreelVideo" muted playsinline autoplay loop preload="metadata">
           <source src="assets/showreel.mp4" type="video/mp4">
         </video>
       </div>
@@ -236,19 +236,33 @@
   <script>
     (() => {
       const video = document.getElementById('showreelVideo');
-      if (!video || !('IntersectionObserver' in window)) return;
+      if (!video) return;
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.45) {
-            video.play().catch(() => {});
-          } else {
-            video.pause();
-          }
-        });
-      }, { threshold: [0, 0.45, 0.7, 1] });
+      video.muted = true;
+      video.setAttribute('muted', '');
+      video.setAttribute('playsinline', '');
+      video.setAttribute('autoplay', '');
 
-      observer.observe(video);
+      const tryPlay = () => video.play().catch(() => {});
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+              tryPlay();
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: [0, 0.2, 0.5, 1] });
+
+        observer.observe(video);
+      }
+
+      video.addEventListener('loadeddata', tryPlay, { once: true });
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) video.pause();
+      });
     })();
   </script>
 </body>
