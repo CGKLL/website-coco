@@ -53,11 +53,16 @@
     .about-portrait{position:absolute;right:-28%;top:-30%;height:292%;width:auto;max-width:none;pointer-events:none;user-select:none}
 
     /* Experience */
-    .experience{background:var(--red);padding:clamp(1.1rem,2.4vw,2.2rem)}
-    .experience .zone-title{font-size:clamp(2.5rem,5.7vw,5.5rem);margin-bottom:1rem}
-    .experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
-    .experience-col h3{font-size:clamp(2rem,4.4vw,4.2rem);margin:.2rem 0 1rem;text-transform:uppercase}
-    .experience-col p{font-size:clamp(.9rem,1.04vw,1.05rem);line-height:1.5;margin:0 0 .9rem;color:#130f0f}
+    .experience{background:var(--red);padding:clamp(1.1rem,2.4vw,2.2rem);position:relative}
+    .experience .zone-title{font-size:clamp(2.9rem,6.1vw,6.2rem);margin-bottom:.8rem}
+    .experience-center-title{font-size:clamp(2.5rem,5.4vw,5.4rem);line-height:.95;text-align:center;margin:0 0 1.1rem;color:var(--cream);text-transform:none}
+    .experience-grid{display:grid;grid-template-columns:56% 44%;gap:2rem}
+    .experience-col h4{font-size:clamp(1.1rem,1.45vw,1.7rem);margin:.2rem 0 .35rem;color:#1b1010}
+    .experience-col p{font-size:clamp(.92rem,1.06vw,1.12rem);line-height:1.45;margin:0 0 .7rem;color:#130f0f}
+    .experience-col-right{text-align:right}
+    .experience-block{margin-bottom:2rem}
+    .experience-scroll{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;width:106px;height:106px;color:var(--blue);text-decoration:none;animation:bounceHint 1.5s ease-in-out infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
+    .experience-scroll svg{width:100%;height:100%}
 
     /* Showreel */
     .showreel{background:var(--orange);padding:clamp(1rem,2vw,1.8rem)}
@@ -75,7 +80,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){
-      .hero-scroll,.about-scroll{animation:none}
+      .hero-scroll,.about-scroll,.experience-scroll{animation:none}
       html{scroll-behavior:auto}
     }
 
@@ -89,7 +94,10 @@
       .about-actions a{font-size:clamp(1.02rem,1.85vw,1.25rem)}
       .about-portrait{right:-30%;top:-24%;height:238%}
       .about-scroll{right:4%;bottom:3%;width:98px;height:98px}
+      .experience-center-title{font-size:clamp(2.1rem,5.2vw,4rem)}
       .experience-grid{grid-template-columns:1fr}
+      .experience-col-right{text-align:left}
+      .experience-scroll{width:94px;height:94px}
       .hero-kicker-left{left:9%;top:43%}
       .hero-kicker-right{left:40%;top:49%}
       .hero-scroll{left:13%;bottom:5%;width:104px;height:104px}
@@ -109,6 +117,8 @@
       .about-actions a{font-size:clamp(.98rem,4.15vw,1.14rem)}
       .about-portrait{right:-48%;top:-36%;height:214%}
       .about-scroll{right:3%;bottom:2%;width:86px;height:86px}
+      .experience-center-title{font-size:clamp(1.9rem,8.2vw,2.6rem)}
+      .experience-scroll{width:82px;height:82px}
       .showreel-frame{border-width:7px}
     }
   </style>
@@ -156,20 +166,51 @@
 
     <section class="zone experience" id="experience">
       <h2 class="zone-title">Erfahrung</h2>
+      <h3 class="experience-center-title">Info Info Info</h3>
       <div class="experience-grid">
         <article class="experience-col">
-          <h3>Referenzen</h3>
-          <p>[Strukturtext folgt]</p>
-          <p>[Strukturtext folgt]</p>
-          <p>[Strukturtext folgt]</p>
+          <div class="experience-block">
+            <h4>[Linke Überschrift 1]</h4>
+            <p>[Textblock links 1]</p>
+          </div>
+          <div class="experience-block">
+            <h4>[Linke Überschrift 2]</h4>
+            <p>[Textblock links 2]</p>
+          </div>
+          <div class="experience-block">
+            <h4>[Linke Überschrift 3]</h4>
+            <p>[Textblock links 3]</p>
+          </div>
+          <div class="experience-block">
+            <h4>[Linke Überschrift 4]</h4>
+            <p>[Textblock links 4]</p>
+          </div>
         </article>
-        <article class="experience-col">
-          <h3 style="opacity:0">Referenzen</h3>
-          <p>[Strukturtext folgt]</p>
-          <p>[Strukturtext folgt]</p>
-          <p>[Strukturtext folgt]</p>
+        <article class="experience-col experience-col-right">
+          <div class="experience-block">
+            <h4>[Rechte Überschrift 1]</h4>
+            <p>[Textblock rechts 1]</p>
+          </div>
+          <div class="experience-block">
+            <h4>[Rechte Überschrift 2]</h4>
+            <p>[Textblock rechts 2]</p>
+          </div>
+          <div class="experience-block">
+            <h4>[Rechte Überschrift 3]</h4>
+            <p>[Textblock rechts 3]</p>
+          </div>
+          <div class="experience-block">
+            <h4>[Rechte Überschrift 4]</h4>
+            <p>[Textblock rechts 4]</p>
+          </div>
         </article>
       </div>
+      <a class="experience-scroll" href="#showreel" aria-label="Zur Showreel-Sektion scrollen">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M26 38L60 72L94 38" stroke="currentColor" stroke-width="12" stroke-linecap="square"/>
+          <path d="M26 72L60 106L94 72" stroke="currentColor" stroke-width="12" stroke-linecap="square"/>
+        </svg>
+      </a>
     </section>
 
     <section class="zone showreel" id="showreel">
