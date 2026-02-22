@@ -252,21 +252,25 @@
         audioBtn.textContent = video.muted ? '🔊 Sound an' : '🔇 Sound aus';
       };
 
-      if ('IntersectionObserver' in window) {
+      const showreelSection = document.getElementById('showreel');
+      if ('IntersectionObserver' in window && showreelSection) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
               tryPlay();
             } else {
               video.pause();
             }
           });
-        }, { threshold: [0, 0.2, 0.5, 1] });
+        }, { threshold: [0, 0.15, 0.4, 1] });
 
-        observer.observe(video);
+        observer.observe(showreelSection);
       }
 
-      video.addEventListener('loadeddata', tryPlay, { once: true });
+      video.addEventListener('loadedmetadata', tryPlay, { once: true });
+      video.addEventListener('canplay', tryPlay, { once: true });
+      window.addEventListener('pageshow', tryPlay, { once: true });
+      setTimeout(tryPlay, 350);
       if (audioBtn) {
         audioBtn.addEventListener('click', async () => {
           video.muted = !video.muted;
