@@ -265,24 +265,35 @@
       };
 
       const showreelSection = document.getElementById('showreel');
-      if ('IntersectionObserver' in window && showreelSection) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
-              tryPlay();
-            } else {
-              video.pause();
-            }
-          });
-        }, { threshold: [0, 0.15, 0.4, 1] });
+      const updatePlaybackByViewport = () => {
+        if (!showreelSection) return;
+        const rect = showreelSection.getBoundingClientRect();
+        const vh = window.innerHeight || document.documentElement.clientHeight;
+        const visiblePx = Math.max(0, Math.min(rect.bottom, vh) - Math.max(rect.top, 0));
+        const visibleRatio = rect.height > 0 ? (visiblePx / rect.height) : 0;
 
+        if (visibleRatio >= 0.15) {
+          tryPlay();
+        } else {
+          video.pause();
+        }
+      };
+
+      if ('IntersectionObserver' in window && showreelSection) {
+        const observer = new IntersectionObserver(() => updatePlaybackByViewport(), { threshold: [0, 0.1, 0.15, 0.4, 1] });
         observer.observe(showreelSection);
       }
+
+      window.addEventListener('scroll', updatePlaybackByViewport, { passive: true });
+      window.addEventListener('resize', updatePlaybackByViewport);
 
       video.addEventListener('loadedmetadata', tryPlay, { once: true });
       video.addEventListener('canplay', tryPlay, { once: true });
       window.addEventListener('pageshow', tryPlay, { once: true });
-      setTimeout(tryPlay, 350);
+      setTimeout(() => {
+        tryPlay();
+        updatePlaybackByViewport();
+      }, 350);
       if (audioBtn) {
         audioBtn.addEventListener('click', async () => {
           video.muted = !video.muted;
