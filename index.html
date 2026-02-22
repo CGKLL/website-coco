@@ -47,6 +47,8 @@
     .about-actions{margin-top:1.35rem;display:flex;flex-direction:column;gap:.25rem;align-items:center;width:100%;max-width:28ch}
     .about-actions a{font-size:clamp(1.05rem,1.12vw,1.45rem);font-weight:700;color:#160f0f;text-decoration:none;line-height:1.2}
     .about-actions a:hover{text-decoration:underline}
+    .about-scroll{position:absolute;right:5%;bottom:4%;display:inline-flex;align-items:center;justify-content:center;width:112px;height:112px;color:var(--blue);text-decoration:none;animation:bounceHint 1.5s ease-in-out infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25));z-index:3}
+    .about-scroll svg{width:100%;height:100%}
     .about-media{position:absolute;inset:0;overflow:hidden;z-index:1;background:transparent;pointer-events:none}
     .about-portrait{position:absolute;right:-28%;top:-30%;height:292%;width:auto;max-width:none;pointer-events:none;user-select:none}
 
@@ -73,7 +75,7 @@
     }
 
     @media (prefers-reduced-motion: reduce){
-      .hero-scroll{animation:none}
+      .hero-scroll,.about-scroll{animation:none}
       html{scroll-behavior:auto}
     }
 
@@ -86,6 +88,7 @@
       .about-actions{align-items:flex-start;max-width:34ch}
       .about-actions a{font-size:clamp(1.02rem,1.85vw,1.25rem)}
       .about-portrait{right:-30%;top:-24%;height:238%}
+      .about-scroll{right:4%;bottom:3%;width:98px;height:98px}
       .experience-grid{grid-template-columns:1fr}
       .hero-kicker-left{left:9%;top:43%}
       .hero-kicker-right{left:40%;top:49%}
@@ -105,6 +108,7 @@
       .about-actions{align-items:flex-start;max-width:100%}
       .about-actions a{font-size:clamp(.98rem,4.15vw,1.14rem)}
       .about-portrait{right:-48%;top:-36%;height:214%}
+      .about-scroll{right:3%;bottom:2%;width:86px;height:86px}
       .showreel-frame{border-width:7px}
     }
   </style>
@@ -142,6 +146,12 @@
       <div class="about-media" aria-label="About Bild">
         <img class="about-portrait" src="assets/about-person.png" alt="Portrait von Constanze" loading="lazy">
       </div>
+      <a class="about-scroll" href="#experience" aria-label="Zur Erfahrung-Sektion scrollen">
+        <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M26 38L60 72L94 38" stroke="currentColor" stroke-width="12" stroke-linecap="square"/>
+          <path d="M26 72L60 106L94 72" stroke="currentColor" stroke-width="12" stroke-linecap="square"/>
+        </svg>
+      </a>
     </section>
 
     <section class="zone experience" id="experience">
