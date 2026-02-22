@@ -47,7 +47,8 @@
     .about-actions{margin-top:1.35rem;display:flex;flex-direction:column;gap:.25rem;align-items:center;width:100%;max-width:28ch}
     .about-actions a{font-size:clamp(1.05rem,1.12vw,1.45rem);font-weight:700;color:#160f0f;text-decoration:none;line-height:1.2}
     .about-actions a:hover{text-decoration:underline}
-    .about-media{background:#252525}
+    .about-media{position:relative;overflow:hidden}
+    .about-portrait{position:absolute;right:-18%;bottom:-2%;width:128%;max-width:none;pointer-events:none;user-select:none}
 
     /* Experience */
     .experience{background:var(--red);padding:clamp(1.1rem,2.4vw,2.2rem)}
@@ -84,6 +85,7 @@
       .about-actions{align-items:flex-start;max-width:34ch}
       .about-actions a{font-size:clamp(1.02rem,1.85vw,1.25rem)}
       .about-media{min-height:520px}
+      .about-portrait{right:-8%;width:110%;bottom:-1%}
       .experience-grid{grid-template-columns:1fr}
       .hero-kicker-left{left:9%;top:43%}
       .hero-kicker-right{left:40%;top:49%}
@@ -101,6 +103,7 @@
       .about-actions{align-items:flex-start;max-width:100%}
       .about-actions a{font-size:clamp(.98rem,4.15vw,1.14rem)}
       .about-media{min-height:420px}
+      .about-portrait{right:-12%;width:128%;bottom:0}
       .showreel-frame{border-width:7px}
     }
   </style>
@@ -135,7 +138,9 @@
           <a href="#contact">Mail schreiben</a>
         </div>
       </div>
-      <div class="about-media placeholder" aria-label="About Bild Platzhalter"></div>
+      <div class="about-media" aria-label="About Bild">
+        <img class="about-portrait" src="assets/about-person.png" alt="Portrait von Constanze" loading="lazy">
+      </div>
     </section>
 
     <section class="zone experience" id="experience">
