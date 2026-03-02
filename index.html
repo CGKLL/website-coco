@@ -24,8 +24,8 @@
 
     /* Hero */
     .hero{height:auto;background:#111;overflow:hidden}
-    .hero-media{position:relative}
-    .hero-media img{width:100%;height:auto;display:block}
+    .hero-media{position:relative;aspect-ratio:16/9;min-height:540px}
+    .hero-media img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 28%}
     .hero-overlay{position:absolute;inset:0;padding:clamp(1rem,3vw,2.6rem)}
     .hero-name{position:absolute;left:50%;top:1rem;transform:translateX(-50%);width:100%;text-align:center;font-size:clamp(3rem,9.3vw,10rem);color:var(--orange);font-family:"ITC Benguiat Condensed","ITC Benguiat","Times New Roman",serif;font-weight:700}
     .hero-kicker{position:absolute;color:var(--orange);font-family:"ITC Benguiat Condensed","ITC Benguiat","Times New Roman",serif;font-weight:700;text-transform:uppercase}
@@ -40,7 +40,7 @@
     }
 
     /* About */
-    .about{background:var(--orange);min-height:760px;position:relative;overflow:hidden}
+    .about{background:var(--orange);min-height:760px;position:relative;overflow:hidden;padding-bottom:5.5rem}
     .about-copy{padding:clamp(1.6rem,3.4vw,3.6rem) clamp(1.2rem,3vw,3rem);display:flex;flex-direction:column;position:relative;z-index:2;width:min(40%,620px)}
     .about-copy .zone-title{font-size:clamp(3.4rem,7vw,8rem);margin-bottom:1.5rem;line-height:.86}
     .about-copy p{font-size:clamp(1.05rem,1.12vw,1.45rem);line-height:1.45;margin:0 0 1.7rem;font-weight:700;max-width:28ch}
@@ -59,7 +59,7 @@
     .experience-grid{display:grid;grid-template-columns:56% 44%;gap:2rem}
     .experience-col{padding:0}
     .experience-col h4{font-size:clamp(1.1rem,1.45vw,1.7rem);margin:.2rem 0 .35rem;color:var(--cream)}
-    .experience-col p{font-size:clamp(.92rem,1.06vw,1.12rem);line-height:1.45;margin:0 0 .7rem;color:#130f0f}
+    .experience-col p{font-size:clamp(.92rem,1.06vw,1.12rem);line-height:1.45;margin:0 0 .7rem;color:rgba(246,243,234,.94)}
     .experience-col-right{text-align:right;padding-right:1.6rem}
     .experience-block{margin-bottom:2.8rem}
     .experience-scroll{position:absolute;left:50%;bottom:2%;transform:translateX(-50%);display:inline-flex;align-items:center;justify-content:center;width:106px;height:106px;color:var(--blue);text-decoration:none;animation:bounceHint 1.5s ease-in-out infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25))}
@@ -77,7 +77,7 @@
     .showreel-scroll svg{width:100%;height:100%}
 
     /* Contact */
-    .contact{background:var(--red);padding:clamp(1.1rem,2.2vw,2.2rem);min-height:1010px;display:flex;flex-direction:column;justify-content:space-between}
+    .contact{background:var(--red);padding:clamp(1.1rem,2.2vw,2.2rem);min-height:640px;display:flex;flex-direction:column;justify-content:space-between}
     .contact .zone-title{font-size:clamp(3rem,7vw,7rem)}
     .contact-data{align-self:flex-end;text-align:right;color:#120e0f;font-size:clamp(1rem,1.25vw,1.3rem);line-height:1.45}
     .contact-data a{color:inherit;text-decoration:none}
@@ -95,42 +95,58 @@
 
     @media (max-width:1024px){
       .hero{height:auto}
-      .hero-media img{width:100%;height:auto;transform:none}
+      .hero-media{aspect-ratio:4/5;min-height:0}
+      .hero-media img{width:100%;height:100%;transform:none;object-position:center 22%}
       .about{min-height:700px}
-      .about-copy{width:min(46%,500px)}
+      .about-copy{width:min(52%,560px)}
       .about-copy p{font-size:clamp(1.02rem,1.85vw,1.25rem);max-width:34ch;margin-bottom:1.45rem}
       .about-actions{align-items:flex-start;max-width:34ch}
       .about-actions a{font-size:clamp(1.02rem,1.85vw,1.25rem)}
-      .about-portrait{right:-30%;top:-24%;height:238%}
-      .about-scroll{right:4%;bottom:3%;width:98px;height:98px}
+      .about-portrait{right:-34%;top:-16%;height:188%}
+      .about-scroll{right:4%;bottom:2%;width:92px;height:92px}
       .experience-center-title{font-size:clamp(1.75rem,4.4vw,3.2rem)}
-      .experience-grid{grid-template-columns:1fr}
+      .experience-grid{grid-template-columns:1fr;gap:1rem}
       .experience-col-right{text-align:left;padding-right:0}
-      .experience-scroll{width:94px;height:94px}
+      .experience-block{margin-bottom:1.6rem}
+      .experience-scroll{width:88px;height:88px}
       .showreel-scroll{width:64px;height:64px;right:10px;bottom:10px}
       .hero-kicker-left{left:9%;top:43%}
       .hero-kicker-right{left:40%;top:49%}
-      .hero-scroll{left:13%;bottom:5%;width:104px;height:104px}
+      .hero-scroll{left:13%;bottom:5%;width:98px;height:98px}
     }
 
     @media (max-width:768px){
       .hero{height:auto}
-      .hero-media img{width:100%;height:auto;transform:none}
-      .hero-name{font-size:clamp(2.6rem,12.5vw,5.2rem)}
-      .hero-kicker-left{left:8%;top:45%;font-size:clamp(.9rem,3.6vw,1.2rem)}
-      .hero-kicker-right{left:39%;top:53%;font-size:clamp(.9rem,3.6vw,1.2rem)}
-      .hero-scroll{left:16%;bottom:4%;width:90px;height:90px}
-      .about{min-height:760px}
-      .about-copy{width:62%}
-      .about-copy p{font-size:clamp(.98rem,4.15vw,1.14rem);line-height:1.42;max-width:100%;margin-bottom:1.25rem}
+      .hero-media{aspect-ratio:3/4}
+      .hero-media img{width:100%;height:100%;transform:none;object-position:center 18%}
+      .hero-name{font-size:clamp(2.6rem,12.5vw,5.2rem);top:.8rem}
+      .hero-kicker-left{left:7%;top:43%;font-size:clamp(.9rem,3.6vw,1.2rem)}
+      .hero-kicker-right{left:43%;top:50%;font-size:clamp(.9rem,3.6vw,1.2rem)}
+      .hero-scroll{left:10%;bottom:3%;width:74px;height:74px}
+
+      .about{min-height:0;padding-bottom:4.5rem}
+      .about-copy{width:100%;padding:1.2rem 1rem 0.4rem}
+      .about-copy .zone-title{margin-bottom:.85rem}
+      .about-copy p{font-size:clamp(.98rem,4.15vw,1.14rem);line-height:1.42;max-width:100%;margin-bottom:1.05rem}
       .about-actions{align-items:flex-start;max-width:100%}
       .about-actions a{font-size:clamp(.98rem,4.15vw,1.14rem)}
-      .about-portrait{right:-48%;top:-36%;height:214%}
-      .about-scroll{right:3%;bottom:2%;width:86px;height:86px}
+      .about-media{position:relative;inset:auto;height:58vw;min-height:260px;margin-top:.25rem;pointer-events:none}
+      .about-portrait{right:-15%;top:-18%;height:140%}
+      .about-scroll{right:3%;bottom:1%;width:72px;height:72px}
+
+      .experience{padding:1rem .95rem 4.4rem}
       .experience-center-title{font-size:clamp(1.6rem,7vw,2.15rem)}
-      .experience-scroll{width:82px;height:82px}
-      .showreel-scroll{width:58px;height:58px;right:8px;bottom:8px}
-      .showreel-frame{border-width:7px}
+      .experience .zone-title{margin-bottom:.25rem}
+      .experience-col h4{font-size:1.12rem}
+      .experience-col p{font-size:1rem;line-height:1.5}
+      .experience-scroll{width:72px;height:72px;bottom:1%}
+
+      .showreel{padding:.9rem .8rem}
+      .showreel-scroll{width:54px;height:54px;right:8px;bottom:8px}
+      .showreel-frame{border-width:6px}
+
+      .contact{min-height:420px;padding:1rem .95rem}
+      .contact-data{font-size:1rem;line-height:1.5}
     }
   </style>
 </head>
