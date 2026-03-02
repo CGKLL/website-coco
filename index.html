@@ -18,6 +18,13 @@
     body{font-family:Georgia,"Times New Roman",serif;background:var(--red);color:var(--cream)}
     img,video{display:block;max-width:100%}
 
+    .top-nav{position:sticky;top:0;z-index:999;background:rgba(10,10,10,.78);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid rgba(246,243,234,.18)}
+    .top-nav-inner{width:min(1800px,100%);margin:0 auto;padding:.62rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .top-nav-brand{color:var(--cream);text-decoration:none;font-family:"ITC Benguiat Condensed","ITC Benguiat","Times New Roman",serif;font-size:1.1rem;letter-spacing:.02em}
+    .top-nav-links{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:flex-end}
+    .top-nav-links a{color:var(--cream);text-decoration:none;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
+    .top-nav-links a:hover{text-decoration:underline}
+
     .page{width:min(1800px,100%);margin:0 auto}
     .zone{position:relative}
     .zone-title{margin:0;text-transform:uppercase;line-height:.88;letter-spacing:.01em}
@@ -116,6 +123,11 @@
     }
 
     @media (max-width:768px){
+      .top-nav-inner{padding:.5rem .75rem;gap:.5rem}
+      .top-nav-brand{font-size:.95rem}
+      .top-nav-links{gap:.55rem}
+      .top-nav-links a{font-size:.72rem}
+
       .hero{height:auto}
       .hero-media{aspect-ratio:3/4}
       .hero-media img{width:100%;height:100%;transform:none;object-position:center 18%}
@@ -151,6 +163,18 @@
   </style>
 </head>
 <body>
+  <header class="top-nav" aria-label="Hauptmenü">
+    <div class="top-nav-inner">
+      <a class="top-nav-brand" href="#hero">Constanze Ehrhardt</a>
+      <nav class="top-nav-links" aria-label="Sektionen">
+        <a href="#about">About</a>
+        <a href="#experience">Erfahrung</a>
+        <a href="#showreel">Show Reel</a>
+        <a href="#contact">Talk to me</a>
+      </nav>
+    </div>
+  </header>
+
   <main class="page">
     <section class="zone hero" id="hero">
       <div class="hero-media" aria-label="Hero Bild">
