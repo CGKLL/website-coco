@@ -50,6 +50,7 @@
     .about-scroll{position:absolute;right:5%;bottom:4%;display:inline-flex;align-items:center;justify-content:center;width:112px;height:112px;color:var(--blue);text-decoration:none;animation:bounceHint 1.5s ease-in-out infinite;filter:drop-shadow(0 2px 2px rgba(0,0,0,.25));z-index:3}
     .about-scroll svg{width:100%;height:100%}
     .about-media{position:absolute;inset:0;overflow:hidden;z-index:1;background:transparent;pointer-events:none}
+    .about-media::after{content:"";position:absolute;left:0;right:0;bottom:0;height:56px;background:linear-gradient(to bottom,rgba(248,65,5,0),var(--orange));}
     .about-portrait{position:absolute;right:-28%;top:-30%;height:292%;width:auto;max-width:none;pointer-events:none;user-select:none}
 
     /* Experience */
@@ -102,7 +103,7 @@
       .about-copy p{font-size:clamp(1.02rem,1.85vw,1.25rem);max-width:34ch;margin-bottom:1.45rem}
       .about-actions{align-items:flex-start;max-width:34ch}
       .about-actions a{font-size:clamp(1.02rem,1.85vw,1.25rem)}
-      .about-portrait{right:-34%;top:-16%;height:188%}
+      .about-portrait{left:58%;right:auto;top:-10%;height:170%;transform:translateX(-50%)}
       .about-scroll{right:4%;bottom:2%;width:92px;height:92px}
       .experience-center-title{font-size:clamp(1.75rem,4.4vw,3.2rem)}
       .experience-grid{grid-template-columns:1fr;gap:1rem}
@@ -130,8 +131,8 @@
       .about-copy p{font-size:clamp(.98rem,4.15vw,1.14rem);line-height:1.42;max-width:100%;margin-bottom:1.05rem}
       .about-actions{align-items:flex-start;max-width:100%}
       .about-actions a{font-size:clamp(.98rem,4.15vw,1.14rem)}
-      .about-media{position:relative;inset:auto;height:58vw;min-height:260px;margin-top:.25rem;pointer-events:none}
-      .about-portrait{right:-15%;top:-18%;height:140%}
+      .about-media{position:relative;inset:auto;height:54vw;min-height:230px;margin-top:.25rem;pointer-events:none}
+      .about-portrait{left:50%;right:auto;top:-8%;height:126%;transform:translateX(-50%)}
       .about-scroll{right:3%;bottom:1%;width:72px;height:72px}
 
       .experience{padding:1rem .95rem 4.4rem}
