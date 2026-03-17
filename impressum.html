@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Constanze Ehrhardt</title>
+  <style>
+    :root{
+      --red:#db1818;
+      --orange:#f84105;
+      --cream:#f6f3ea;
+      --blue:#2ca6ff;
+      --black:#0a0a0a;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{font-family:Georgia,"Times New Roman",serif;background:var(--red);color:var(--cream);min-height:100vh}
+
+    .top-nav{position:sticky;top:0;z-index:999;background:rgba(248,65,5,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border-bottom:1px solid rgba(246,243,234,.22)}
+    .top-nav-inner{width:min(1800px,100%);margin:0 auto;padding:.62rem 1rem;display:flex;align-items:center;justify-content:center;gap:1rem}
+    .top-nav-links{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+    .top-nav-links a{color:var(--cream);text-decoration:none;font-size:.9rem;letter-spacing:.04em;text-transform:uppercase}
+    .top-nav-links a:hover{text-decoration:underline}
+
+    .page{width:min(1800px,100%);margin:0 auto}
+
+    .impressum{background:var(--red);padding:clamp(2rem,5vw,5rem) clamp(1.2rem,3vw,3rem);min-height:calc(100vh - 52px)}
+    .impressum h1{margin:0 0 2.5rem;text-transform:uppercase;line-height:.88;letter-spacing:.01em;font-size:clamp(3rem,7vw,7rem);color:var(--cream)}
+    .impressum h2{font-size:clamp(1.1rem,1.5vw,1.6rem);margin:2rem 0 .5rem;color:var(--cream);text-transform:uppercase;letter-spacing:.04em}
+    .impressum p{font-size:clamp(1rem,1.1vw,1.2rem);line-height:1.55;margin:0 0 .5rem;color:rgba(246,243,234,.94)}
+    .impressum a{color:var(--cream);text-decoration:underline}
+    .impressum a:hover{color:var(--blue)}
+    .placeholder-text{color:rgba(246,243,234,.5);font-style:italic}
+
+    .back-link{display:inline-block;margin-top:3rem;color:var(--cream);text-decoration:none;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:2px}
+    .back-link:hover{color:var(--blue)}
+
+    @media (max-width:768px){
+      .top-nav-inner{padding:.5rem .75rem;gap:.5rem}
+      .top-nav-links{gap:.55rem}
+      .top-nav-links a{font-size:.72rem}
+      .impressum{padding:1.5rem 1rem}
+    }
+  </style>
+</head>
+<body>
+  <header class="top-nav" aria-label="Hauptmenü">
+    <div class="top-nav-inner">
+      <nav class="top-nav-links" aria-label="Sektionen">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#experience">Leistung</a>
+        <a href="index.html#showreel">Show Reel</a>
+        <a href="index.html#contact">Talk to me</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="impressum">
+      <h1>Impressum</h1>
+
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>Constanze Ehrhardt</p>
+      <p>Turley-Platz 1<br>68167 Mannheim</p>
+
+      <h2>Kontakt</h2>
+      <p>Telefon: +49 176 23 59 65 61</p>
+      <p>E-Mail: <a href="mailto:home@constanze-s-ehrhardt.com">home@constanze-s-ehrhardt.com</a></p>
+
+      <h2>Umsatzsteuer-ID</h2>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:</p>
+      <p class="placeholder-text">[USt-IdNr. – Platzhalter]</p>
+
+      <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+      <p>Constanze Ehrhardt<br>Turley-Platz 1<br>68167 Mannheim</p>
+
+      <h2>Haftung für Inhalte</h2>
+      <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+      <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+      <h2>Haftung für Links</h2>
+      <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+      <h2>Urheberrecht</h2>
+      <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+      <a class="back-link" href="index.html">← Zurück zur Startseite</a>
+    </div>
+  </main>
+</body>
+</html>
